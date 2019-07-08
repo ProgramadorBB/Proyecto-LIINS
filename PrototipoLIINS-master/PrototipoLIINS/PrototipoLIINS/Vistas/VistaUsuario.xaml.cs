@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using PrototipoLIINS.Conexion;
 using PrototipoLIINS.Modelo;
 using PrototipoLIINS.Vistas;
-using System.IO.Ports;
 using System.Threading;
 
 using Xamarin.Forms;

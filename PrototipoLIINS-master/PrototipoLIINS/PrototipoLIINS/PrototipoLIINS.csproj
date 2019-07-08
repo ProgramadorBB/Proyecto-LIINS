@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
-    <PackageReference Include="System.IO.Ports" Version="4.5.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
   </ItemGroup>
 
