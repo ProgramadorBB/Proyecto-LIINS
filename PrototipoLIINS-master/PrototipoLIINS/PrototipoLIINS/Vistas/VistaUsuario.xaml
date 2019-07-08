@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrototipoLIINS.Vistas.VistaUsuario"
+             Title="Menu Usuario">
+    <ContentPage.Content>
+
+        <ScrollView
+            BackgroundColor="LightGray">
+            <StackLayout Orientation="Vertical"
+                     Padding="25"
+                     Spacing="10"
+                     BackgroundColor="LightGray"
+                     >
+                <Label x:Name="lblTitulo"
+                    Text="Menú Usuario"
+                    FontSize="Large"
+                    BackgroundColor="#4E4E4E"
+                    FontAttributes="Bold"   
+                    TextColor="LightGray"  
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"/>
+
+                <Button x:Name="btnVerPerfil"
+                        Text="Ver Perfil"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="perfil.png"
+                        Clicked="BtnVerPerfil_Clicked"                        
+                    />
+
+                <StackLayout x:Name="slCuadro"
+                    Orientation="Vertical"
+                             BackgroundColor="#545454"
+                             IsVisible="False"
+                             Padding="10">
+
+                    <StackLayout Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand"
+                             HeightRequest="45"
+                             >
+                        <Label Text="Usuario: " TextColor="LightGray" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+                        <Label x:Name="lblUser" Text="" TextColor="LightGray" VerticalTextAlignment="Center" FontSize="Medium"/>
+                        <Entry x:Name="txtUser" FontSize="Medium" TextColor="LightGray" 
+                       Placeholder="Ingrese Usuario" PlaceholderColor="LightGray"                           
+                       IsVisible="False"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand"
+                             HeightRequest="45">
+                        <Label Text="Contraseña: " TextColor="LightGray" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+                        <Label x:Name="lblContraseña" TextColor="LightGray" Text="" VerticalTextAlignment="Center" FontSize="Medium" IsVisible="False"/>
+                        <Entry x:Name="txtContraseña" FontSize="Medium" TextColor="LightGray"  IsPassword="True"
+                       Placeholder="Ingrese Contraseña" PlaceholderColor="LightGray" WidthRequest="150"/> <!-- contraseña TXT -->
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand"
+                             HeightRequest="45">
+                        <Label Text="Nombre: " TextColor="LightGray" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+                        <Label x:Name="lblNombre" TextColor="LightGray" Text="" VerticalTextAlignment="Center" FontSize="Medium"/>
+                        <Entry x:Name="txtNombre" FontSize="Medium" TextColor="LightGray" 
+                       Placeholder="Ingrese Nombre" PlaceholderColor="LightGray"
+                       IsVisible="False"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand"
+                             HeightRequest="45">
+                        <Label Text="Apellido: " TextColor="LightGray" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"/>
+                        <Label x:Name="lblApellido" TextColor="LightGray" Text="" VerticalTextAlignment="Center" FontSize="Medium"/>
+                        <Entry x:Name="txtApellido" FontSize="Medium" TextColor="LightGray" 
+                       Placeholder="Ingrese Apellido" PlaceholderColor="LightGray"
+                       IsVisible="False"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <Button x:Name="btnModificarPerfil"
+                        Text="Modificar Perfil de Usuario"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="edit.png"
+                        IsVisible="False"
+                        Clicked="BtnModificarPerfil_Clicked"                    
+                        />
+
+                <Button x:Name="btnGuardarCambios"
+                    Text="Guardar cambios"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="guardar.png"
+                    IsVisible="False"
+                    Clicked="BtnGuardarCambios_Clicked"
+                        />
+
+                <Button x:Name="btnEliminarCuenta"
+                    Text="Eliminar Cuenta"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="delete.png"
+                    IsVisible="False"
+                    Clicked="BtnEliminarCuenta_Clicked"/>
+
+                <Button x:Name="btnVolver"
+                    Text="Volver al Menú"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="volver.png"
+                    IsVisible="False"
+                        Clicked="BtnVolver_Clicked"/>
+
+                <Button x:Name="btnMostrarOcultar"
+                    Text="Mostrar Contraseña"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="mostrar.png"
+                    IsVisible="False"
+                        Clicked="BtnMostrarOcultar_Clicked"
+                />
+
+                <Button x:Name="btnVolver2"
+                    Text="Volver"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="volver.png"
+                    IsVisible="False"
+                        Clicked="BtnVolver2_Clicked"/>
+
+                <Button x:Name="btnVincularDispositivo"
+                        Text="Vincular Dispositivo"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="bluetooth.png"
+                        Clicked="BtnVincularDispositivo_Clicked"
+                    />
+
+                <Button x:Name="btnMonitorearDispensadores"
+                        Text="Monitorear Dispensadores"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"
+                        HeightRequest="40"
+                        ImageSource="monitorear.png"
+                        IsEnabled="False"
+                        IsVisible="False"
+                        Clicked="BtnMonitorearDispensadores_Clicked"
+                    />
+
+                <Button x:Name="btnVerReglamentoGarzón"
+                        Text="Ver Reglamento de Garzón"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="reglamento.png"
+                        Clicked="BtnVerReglamentoGarzón_Clicked"
+                        />
+
+                <Button x:Name="btnInstrucciones"
+                        Text="Ver Instrucciones de Uso"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="instrucciones.png"
+                        Clicked="BtnInstrucciones_Clicked"
+                    />
+
+                <Button x:Name="btnTerminosLegales"
+                        Text="Ver Terminos legales"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="legales.png"
+                        Clicked="BtnTerminosLegales_Clicked"
+                    />
+
+                <Button x:Name="btnCerrarSesion"
+                        Text="Cerrar Sesión"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        ImageSource="cerrar.png"
+                        TextColor="LightGray"
+                        HeightRequest="40"
+                        Clicked="BtnCerrarSesion_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

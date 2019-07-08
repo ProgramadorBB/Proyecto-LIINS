@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrototipoLIINS.Vistas.VistaInstrucciones">
+    <ContentPage.Content>
+
+        <ScrollView
+            BackgroundColor="LightGray">
+            <StackLayout Orientation="Vertical"
+                     Padding="25"
+                     BackgroundColor="LightGray"
+                     Spacing="10">
+
+                <Label x:Name="lblTitulo"
+                    Text="Instrucciones de Uso"
+                    FontSize="Large"
+                    BackgroundColor="#4E4E4E"
+                    FontAttributes="Bold"   
+                    TextColor="LightGray"  
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"/>
+
+                <Button x:Name="btnVolver"
+                        Text="Volver al Menú"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="volver.png"
+                        Clicked="BtnVolver_Clicked"
+                        />
+
+                <Image Source="iu1.png"
+                       VerticalOptions="Center"/>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

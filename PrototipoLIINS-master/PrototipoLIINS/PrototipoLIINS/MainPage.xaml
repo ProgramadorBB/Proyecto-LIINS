@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PrototipoLIINS"
+             x:Class="PrototipoLIINS.MainPage"
+             Title="Login">
+
+    <StackLayout Orientation="Vertical"
+                 Padding="32"
+                 BackgroundColor="LightGray"
+                 Spacing="10">
+
+        <Image WidthRequest="256"
+               Source="icono.png"/>
+        
+        <Label Text="Binvenido a LIINS" 
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="txtUser"
+               Placeholder="Ingrese Usuario"
+               FontSize="Medium"
+               FontAttributes="Italic"/>
+
+        <Entry x:Name="txtContraseña"
+               Placeholder="Ingrese Contraseña"
+               IsPassword="True"
+               FontSize="Medium"
+               FontAttributes="Italic"/>
+
+        <Button x:Name="btnIngresar"            
+                BorderRadius="10"
+                BorderWidth="2"
+                BorderColor="#353535"
+                BackgroundColor="#545454"
+                FontAttributes="Bold"
+                TextColor="LightGray"
+                Text="Ingresar"
+                HeightRequest="40"
+                Clicked="btnIngresar_Clicked"/>
+
+        <Button x:Name="btnRegistrarCuenta"
+                Text="Registro"
+                BorderRadius="10"
+                BorderWidth="2"
+                BorderColor="#353535"
+                BackgroundColor="#545454"
+                FontAttributes="Bold"
+                TextColor="LightGray"                
+                HeightRequest="40"
+                Clicked="BtnRegistrarCuenta_Clicked"/>
+
+        <Label Text=""
+               x:Name="lblMensaje"
+               FontSize="Medium"
+               HorizontalTextAlignment="Center"/>
+
+        <Label Text="Developed by: B.P.S. Solutions S.A.®"
+               FontSize="Micro"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+    </StackLayout>
+
+</ContentPage>

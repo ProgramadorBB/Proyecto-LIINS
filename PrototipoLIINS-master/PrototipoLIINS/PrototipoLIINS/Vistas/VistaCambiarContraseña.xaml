@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrototipoLIINS.Vistas.VistaCambiarContraseña"
+             Title="CambiarContraseña">
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical"
+                 Padding="32"
+                 BackgroundColor="LightGray"
+                 Spacing="10">
+
+            <Image WidthRequest="256"
+               Source="pass.png"/>
+
+            <StackLayout Orientation="Horizontal"
+                HeightRequest="40">
+                
+            <Label Text="Cambiar Contraseña Admin" 
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="CenterAndExpand"/>
+
+                <ImageButton x:Name="btnInformación"   
+                             HeightRequest="40"
+                             Source="info.png"
+                             VerticalOptions="Center"
+                             HorizontalOptions="EndAndExpand"
+                             Clicked="BtnInformación_Clicked"
+                    />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"
+                         BackgroundColor="#545454"
+                         Padding="10">
+
+                <Entry x:Name="txtPass1"
+                       VerticalOptions="Center"
+                       Placeholder="Ingrese Nueva Contraseña"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       PlaceholderColor="LightGray"
+                       TextColor="LightGray"
+                       IsPassword="True"/>
+
+                <Entry x:Name="txtPass2"
+                       VerticalOptions="Center"
+                       Placeholder="Repetir Contraseña"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       PlaceholderColor="LightGray"
+                       TextColor="LightGray"
+                       IsPassword="True"/>
+
+            </StackLayout>
+
+            <Button x:Name="btnMostrarOcultar"
+                    Text="Mostrar Contraseña"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="mostrar.png"
+                    Clicked="BtnMostrarOcultar_Clicked"
+                />
+
+            <Button x:Name="btnGuardarCambios"
+                    Text="Guardar cambios"
+                    BorderRadius="10"
+                    BorderWidth="2"
+                    BorderColor="#353535"
+                    BackgroundColor="#545454"
+                    FontAttributes="Bold"
+                    TextColor="LightGray"                
+                    HeightRequest="40"
+                    ImageSource="guardar.png"
+                    Clicked="BtnGuardarCambios_Clicked"
+                />
+
+            <Label Text=""
+               x:Name="lblMensaje"
+               FontSize="Micro"
+               HorizontalTextAlignment="Center"/>
+
+            <Label Text="Developed by: B.P.S. Solutions S.A.®"
+               FontSize="Micro"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

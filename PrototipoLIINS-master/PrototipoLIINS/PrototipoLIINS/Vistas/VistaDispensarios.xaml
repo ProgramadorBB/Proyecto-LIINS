@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrototipoLIINS.Vistas.VistaDispensarios">
+    <ContentPage.Content>
+
+        <ScrollView
+            BackgroundColor="LightGray">
+            <StackLayout Orientation="Vertical"
+                     Padding="25"
+                     BackgroundColor="LightGray"
+                     Spacing="10">
+
+                <Label x:Name="lblTitulo"
+                    Text="Monitorear Dispensadores"
+                    FontSize="Large"
+                    BackgroundColor="#4E4E4E"
+                    FontAttributes="Bold"   
+                    TextColor="LightGray"  
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"/>
+
+                <Image WidthRequest="256"
+                       x:Name="icono"
+                       Source="iconoDispenser.png"/>
+                    
+                    <Button x:Name="btnDispensador1"
+                            Text="Monitorear el Dispensador n°1"
+                            BorderRadius="10"
+                            BorderWidth="2"
+                            BorderColor="#353535"
+                            BackgroundColor="#545454"
+                            FontAttributes="Bold"
+                            TextColor="LightGray"                
+                            HeightRequest="40"
+                            ImageSource="dispensador.png"       
+                            Clicked="BtnDispensador1_Clicked"
+                            />
+                    <Button x:Name="btnDispensador2"
+                            Text="Monitorear el Dispensador n°2"
+                            BorderRadius="10"
+                            BorderWidth="2"
+                            BorderColor="#353535"
+                            BackgroundColor="#545454"
+                            FontAttributes="Bold"
+                            TextColor="LightGray"                
+                            HeightRequest="40"
+                            ImageSource="dispensador.png"      
+                            Clicked="BtnDispensador2_Clicked"
+                            />
+                    <Button x:Name="btnDispensador3"
+                            Text="Monitorear el Dispensador n°3"
+                            BorderRadius="10"
+                            BorderWidth="2"
+                            BorderColor="#353535"
+                            BackgroundColor="#545454"
+                            FontAttributes="Bold"
+                            TextColor="LightGray"                
+                            HeightRequest="40"
+                            ImageSource="dispensador.png"    
+                            Clicked="BtnDispensador3_Clicked"
+                            />
+                    <Button x:Name="btnDispensadorTodos"
+                            Text="Monitorear Dispensadores"
+                            BorderRadius="10"
+                            BorderWidth="2"
+                            BorderColor="#353535"
+                            BackgroundColor="#545454"
+                            FontAttributes="Bold"
+                            TextColor="LightGray"                
+                            HeightRequest="40"
+                            ImageSource="dispensadores.png"           
+                            Clicked="BtnDispensadorTodos_Clicked"
+                            />
+                
+                <!-- interfaz monitorear dispensador 1 -->
+                <StackLayout x:Name="slDispensador1"
+                             Orientation="Horizontal"
+                             IsVisible="False">
+
+                    <Image Source="dispensadorColor.png"                           
+                        HorizontalOptions="EndAndExpand"/>
+
+                    <StackLayout Orientation="Vertical"
+                                 Spacing="10"
+                                 Padding="10"
+                                 BackgroundColor="#545454"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="EndAndExpand">
+                        <Label Text="Dispensador n°1"
+                               FontAttributes="Bold"
+                               FontSize="Medium"
+                               HorizontalOptions="CenterAndExpand"
+                               TextColor="LightGray"/>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+                            <Label Text="Volumen: "
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label x:Name="lblCapacidad1"
+                                   Text="25"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label Text="%"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+                            <Label Text="Liquido:"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label x:Name="lblContenido1"
+                                   Text="Coca-Cola"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Picker x:Name="pkContenido1"
+                                    TitleColor="LightGray"
+                                    FontSize="Micro"
+                                    HeightRequest="40"
+                                    VerticalOptions="End"
+                                    IsVisible="False"
+                                    Title="Seleccione"
+                                    BackgroundColor="#545454"
+                                    TextColor="LightGray"/>
+                        </StackLayout>
+                        <StackLayout x:Name="slBotones1"
+                                     IsVisible="False"
+                                     Orientation="Horizontal"
+                                     Spacing="10"
+                                     HeightRequest="40">
+                            <Button x:Name="btnRellenoListo1"
+                                    Text="Rellenado Listo"
+                                    BorderRadius="10"
+                                    BorderWidth="2"
+                                    BorderColor="#353535"
+                                    BackgroundColor="#545454"
+                                    FontAttributes="Bold"
+                                    TextColor="LightGray"                
+                                    HeightRequest="40"
+                                    ImageSource="listo.png"
+                                    IsVisible="False"
+                                    IsEnabled="False"
+                                    HorizontalOptions="FillAndExpand"
+                                    Clicked="BtnRellenoListo1_Clicked"
+                        />
+
+                            <ImageButton x:Name="btnInformación1"   
+                                         HeightRequest="45"
+                                         Source="info.png"
+                                         BackgroundColor="#545454"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="End"
+                                         IsVisible="False"
+                                         Clicked="BtnInformación1_Clicked"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout><!-- Termina el monitorear dispensador 1 -->                
+
+                <!-- interfaz monitorear dispensador 2 -->
+                <StackLayout x:Name="slDispensador2"
+                             Orientation="Horizontal"
+                             IsVisible="False">
+
+                    <Image Source="dispensadorColor.png"                           
+                        HorizontalOptions="EndAndExpand"/>
+
+                    <StackLayout Orientation="Vertical"
+                                 Spacing="10"
+                                 Padding="10"
+                                 BackgroundColor="#545454"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="EndAndExpand">
+                        <Label Text="Dispensador n°2"
+                               FontAttributes="Bold"
+                               HorizontalOptions="CenterAndExpand"
+                               FontSize="Medium"
+                               TextColor="LightGray"/>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+                            <Label Text="Volumen: "
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label x:Name="lblCapacidad2"
+                                   Text="14"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label Text="%"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+                            <Label Text="Liquido:"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label x:Name="lblContenido2"
+                                   Text="Fanta"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Picker x:Name="pkContenido2"
+                                    TitleColor="LightGray"
+                                    FontSize="Micro"
+                                    HeightRequest="40"
+                                    VerticalOptions="End"
+                                    IsVisible="False"
+                                    Title="Seleccione"
+                                    BackgroundColor="#545454"
+                                    TextColor="LightGray"/>
+                        </StackLayout>
+                        <StackLayout x:Name="slBotones2"
+                                    IsVisible="False"
+                                    Orientation="Horizontal"
+                                    Spacing="10"
+                                    HeightRequest="40">
+                            <Button x:Name="btnRellenoListo2"
+                                    Text="Rellenado Listo"
+                                    BorderRadius="10"
+                                    BorderWidth="2"
+                                    BorderColor="#353535"
+                                    BackgroundColor="#545454"
+                                    FontAttributes="Bold"
+                                    TextColor="LightGray"                
+                                    HeightRequest="40"
+                                    ImageSource="listo.png"
+                                    IsVisible="False"
+                                    IsEnabled="False"
+                                    HorizontalOptions="FillAndExpand"
+                                    Clicked="BtnRellenoListo2_Clicked"
+                        />
+                            <ImageButton x:Name="btnInformación2"   
+                                         HeightRequest="45"
+                                         BackgroundColor="#545454"
+                                         Source="info.png"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="End"
+                                         IsVisible="False"
+                                         Clicked="BtnInformación2_Clicked"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <!-- Termina el monitorear dispensador 2 -->               
+
+                <!-- interfaz monitorear dispensador 3 -->
+                <StackLayout x:Name="slDispensador3"
+                             Orientation="Horizontal"
+                             IsVisible="False">
+
+                    <Image Source="dispensadorColor.png"                           
+                        HorizontalOptions="EndAndExpand"/>
+
+                    <StackLayout Orientation="Vertical"
+                                 Spacing="10"
+                                 Padding="10"
+                                 BackgroundColor="#545454"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="EndAndExpand">
+                        <Label Text="Dispensador n°3"
+                               FontAttributes="Bold"
+                               HorizontalOptions="CenterAndExpand"
+                               FontSize="Medium"
+                               TextColor="LightGray"/>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+                            <Label Text="Volumen: "
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label x:Name="lblCapacidad3"
+                                   Text="13"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label Text="%"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+                            <Label Text="Liquido:"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Label x:Name="lblContenido3"
+                                   Text="Sprite"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="LightGray"/>
+
+                            <Picker x:Name="pkContenido3"
+                                    TitleColor="LightGray"
+                                    FontSize="Micro"
+                                    HeightRequest="40"
+                                    VerticalOptions="End"
+                                    IsVisible="False"
+                                    Title="Seleccione"
+                                    BackgroundColor="#545454"
+                                    TextColor="LightGray"/>
+                        </StackLayout>
+
+                        <StackLayout x:Name="slBotones3"
+                             IsVisible="False"
+                             Orientation="Horizontal"
+                             Spacing="10"
+                             HeightRequest="40">
+                            <Button x:Name="btnRellenoListo3"
+                            Text="Rellenado Listo"
+                            BorderRadius="10"
+                            BorderWidth="2"
+                            BorderColor="#353535"
+                            BackgroundColor="#545454"
+                            FontAttributes="Bold"
+                            TextColor="LightGray"                
+                            HeightRequest="40"
+                            ImageSource="listo.png"
+                            IsVisible="False"
+                            IsEnabled="False"
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="BtnRellenoListo3_Clicked"
+                        />
+                            <ImageButton x:Name="btnInformación3"   
+                                         BackgroundColor="#545454"
+                                         HeightRequest="45"
+                                         Source="info.png"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="End"
+                                         IsVisible="False"
+                                         Clicked="BtnInformación3_Clicked"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <!-- Termina el monitorear dispensador 3 -->                
+
+
+                <Button x:Name="btnVolver"
+                        Text="Volver al Menú"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="volver.png"
+                        Clicked="BtnVolver_Clicked"
+                        />                
+
+                <Button x:Name="btnVolver2"
+                        Text="Volver"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="volver.png"
+                        IsVisible="False"
+                        Clicked="BtnVolver2_Clicked"
+                        />
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

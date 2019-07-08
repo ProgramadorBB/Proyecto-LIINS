@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrototipoLIINS.Vistas.VistaAdmin">
+    <ContentPage.Content>
+        
+        <ScrollView
+            BackgroundColor="LightGray">
+            <StackLayout Orientation="Vertical"
+                     Padding="25"
+                     BackgroundColor="LightGray"
+                     Spacing="10">
+
+                <Label
+                    Text="Menú Administrador"
+                    FontSize="Large"
+                    BackgroundColor="#4E4E4E"
+                    FontAttributes="Bold"   
+                    TextColor="LightGray"  
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"/>                
+
+                <Button x:Name="btnInstrucciones"
+                        Text="Ver Instrucciones de Uso"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="instrucciones.png"
+                        Clicked="BtnInstrucciones_Clicked"
+                        />
+                <Button x:Name="btnTerminosLegales"
+                        Text="Ver Terminos legales"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="legales.png"
+                        Clicked="BtnTerminosLegales_Clicked"
+                        />                
+
+                <Button x:Name="btnKpiConsumo"
+                        Text="Indicador De Consumo Acumulado"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="kpi.png"
+                        Clicked="BtnKpiConsumo_Clicked"
+                    />
+
+                <Button x:Name="btnLiquidoPopular"
+                        Text="Ver Liquido más Popular"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="liquido.png"
+                        Clicked="BtnLiquidoPopular_Clicked"
+                        />
+
+                <Button x:Name="btnGetAllUser"
+                        Text="Mostrar Lista de Usuarios"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="lista.png"
+                        Clicked="BtnGetAllUser_Clicked"/>
+
+                <StackLayout Orientation="Horizontal"
+                                     HeightRequest="45"
+                                     >
+                            <Button x:Name="btnBuscarUsuario"      
+                                         Text="Buscar Usuario"
+                                    BorderRadius="10"
+                                    BorderWidth="2"
+                                    BorderColor="#353535"
+                                    BackgroundColor="#545454"
+                                    FontAttributes="Bold"
+                                    ImageSource="buscar.png"
+                                    TextColor="LightGray"
+                                    HeightRequest="45"
+                                    HorizontalOptions="FillAndExpand"
+                                         Clicked="BtnBuscarUsuario_Clicked"/>
+
+                    <ImageButton x:Name="btnInformación"   
+                                         HeightRequest="45"
+                                         Source="info.png"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="Center"
+                                         IsVisible="False"
+                                         Clicked="BtnInformación_Clicked"/>
+
+                    <Entry x:Name="txtBuscar" 
+                                   Placeholder="Buscar Usuario"
+                                   HorizontalOptions="FillAndExpand"
+                                   IsVisible="False"/>
+
+                    <Button x:Name="btnBuscar"
+                            Text="Buscar"
+                                    BorderRadius="10"
+                                    BorderWidth="2"
+                                    BorderColor="#353535"
+                                    BackgroundColor="#545454"
+                                    FontAttributes="Bold"
+                                    TextColor="LightGray"
+                                    HeightRequest="45"
+                            IsVisible="False"
+                            Clicked="BtnBuscar_Clicked"
+                        />                    
+                            <Button x:Name="btnCerrarSesion"
+                                    Text="Cerrar"
+                                    BorderRadius="10"
+                                    BorderWidth="2"
+                                    BorderColor="#353535"
+                                    BackgroundColor="#545454"
+                                    FontAttributes="Bold"
+                                    ImageSource="cerrar.png"
+                                    TextColor="LightGray"
+                                    HeightRequest="45"
+                                    HorizontalOptions="EndAndExpand"
+                                    Clicked="BtnCerrarSesion_Clicked"/>
+                </StackLayout>
+
+                <Button x:Name="btnBorrarTodos"
+                        Text="Eliminar Todos los Usuarios"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="borrartodos.png"
+                        Clicked="BtnBorrarTodos_Clicked"
+                        />
+
+                <Grid x:Name="grLista">
+                    <ListView ItemsSource="{Binding}"
+                          ItemTapped="OnUpdateUser">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>                                        
+                                        <MenuItem Clicked="OnDeleteUser"
+                                          CommandParameter="{Binding}"
+                                          Text="Eliminar"                                          
+                                          IsDestructive="True"/>
+                                    </ViewCell.ContextActions>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label FontSize="Large" FontAttributes="Bold" TextColor="Black" Text="►"
+                                                       VerticalTextAlignment="Center"/>
+                                                <Image Source="usuario.png"
+                                                       WidthRequest="40"
+                                                       VerticalOptions="Center"/>
+                                                <StackLayout Orientation="Vertical">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label FontSize="Micro" TextColor="Black" Text="Nombre:"/>
+                                                        <Label FontSize="Micro" Text="-"/>
+                                                        <Label FontSize="Micro" TextColor="Black" Text="{Binding Nombre}"/>
+                                                        <Label FontSize="Micro" TextColor="Black" Text="{Binding Apellido}"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label FontSize="Small" Text="Usuario:"/>
+                                                        <Label FontSize="Small" Text="{Binding User}"/>
+                                                        <Label FontSize="Small" Text="Estado:"/>
+                                                        <Label FontSize="Small" Text="{Binding Estado}"/>
+                                                    </StackLayout>
+                                             </StackLayout>                                               
+                                                
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell.View>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+                
+
+            </StackLayout>            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

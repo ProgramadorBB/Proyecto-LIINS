@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrototipoLIINS.Vistas.VistaKpi">
+    <ContentPage.Content>
+
+        <ScrollView
+            BackgroundColor="LightGray">
+            <StackLayout Orientation="Vertical"
+                     Padding="25"
+                     BackgroundColor="LightGray"
+                     Spacing="10">
+
+                <Label x:Name="lblTitulo"
+                    Text="KPI Consumo Acumulado"
+                    FontSize="Large"
+                    BackgroundColor="#4E4E4E"
+                    FontAttributes="Bold"   
+                    TextColor="LightGray"  
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"/>
+
+                <Image WidthRequest="256"
+                       x:Name="icono"
+                       Source="iconoKpi.png"/>
+
+                <StackLayout x:Name="slBorde"
+                             Orientation="Vertical"
+                             Padding="10"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Center">                    <!-- / inicio borde-->
+                    <Label Text="Lista Liquidos"
+                           FontSize="Large"
+                           BackgroundColor="#4E4E4E"
+                           FontAttributes="Bold"   
+                           TextColor="LightGray" 
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand"
+                                />
+                    <StackLayout x:Name="slLista"
+                                 Padding="5"
+                                 Spacing="10"                                 
+                                 BackgroundColor="#545454"                             
+                                 HorizontalOptions="CenterAndExpand"
+                                 Orientation="Vertical"
+                                 >                        <!-- / inicio lista-->
+                        <StackLayout x:Name="slColumns"
+                                     Orientation="Horizontal">
+
+                            <StackLayout Orientation="Vertical" 
+                                         Padding="2">
+                                <Label Text="NOMBRE"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblNombreLiquido1"
+                                       Text="Coca-Cola"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblNombreLiquido2"
+                                       Text="Fanta"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblNombreLiquido3"
+                                       Text="Sprite"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical" 
+                                         Padding="2">
+                                <Label Text="TIPO"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"                                        
+                                       TextColor="Black"
+                                />
+                                <Label x:Name="lblTipoLiquido1"
+                                       Text="Bebida"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblTipoLiquido2"
+                                       Text="Bebida"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblTipoLiquido3"
+                                       Text="Bebida"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical" 
+                                         Padding="2">
+                                <Label Text="N° CONSUMO"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblConsumo1"
+                                       Text="10"
+                                       HorizontalTextAlignment="Center"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblConsumo2"
+                                       Text="5"
+                                       HorizontalTextAlignment="Center"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                                <Label x:Name="lblConsumo3"
+                                       Text="8"
+                                       HorizontalTextAlignment="Center"
+                                       FontAttributes="Bold"
+                                       BackgroundColor="LightGray"
+                                />
+                            </StackLayout>
+                        </StackLayout>
+
+
+                    </StackLayout><!-- / fin lista-->
+                </StackLayout><!-- / fin borde-->
+
+                <Button x:Name="btnVolver"
+                        Text="Volver al Menú"
+                        BorderRadius="10"
+                        BorderWidth="2"
+                        BorderColor="#353535"
+                        BackgroundColor="#545454"
+                        FontAttributes="Bold"
+                        TextColor="LightGray"                
+                        HeightRequest="40"
+                        ImageSource="volver.png"
+                        Clicked="BtnVolver_Clicked"
+                        />
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
